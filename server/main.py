@@ -2,6 +2,7 @@ import uvicorn
 from fastapi import FastAPI
 
 import slackSender
+import scheduler
 
 url = "https://hooks.slack.com/services/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"
 ygSlackId = "U067TDGK3PZ"
@@ -15,4 +16,10 @@ def health():
     return {"slack sender test"}
 
 if __name__ == "__main__":
+    def printHi():
+        print("hi")
+
+    scheduler.addScheduleEveryday("03:00", printHi)
+    scheduler.runScheduler(1)
     uvicorn.run(app, port=7777)
+
