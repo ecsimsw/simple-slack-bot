@@ -11,6 +11,7 @@ brew install python
 
 pip3 install fastapi 
 pip3 install uvicorn 
+pip3 install slack_sdk
 
-uvicorn server.main:app --reload 
+python3 server/main.py
 ```
