@@ -9,10 +9,10 @@
 ```
 brew install python
 
-pip install fastapi 
-pip install uvicorn 
-pip install slack_sdk
-pip install schedule
+pip3 install fastapi 
+pip3 install uvicorn 
+pip3 install slack_sdk
+pip3 install schedule
 
-python server/main.py
+python3 server/main.py
 ```

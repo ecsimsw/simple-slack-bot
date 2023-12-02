@@ -10,16 +10,20 @@ jhSlackId = "U02DWRS37FY"
 
 app = FastAPI()
 
+
 @app.get("/")
 def health():
-    slackSender.send(url, "<@{}> 너 오늘 코테 안했다잉: \n*<https://github.com/Giggle-projects/our-howler|Github - our howler>*".format(jhSlackId))
+    howl()
     return {"slack sender test"}
 
-if __name__ == "__main__":
-    def printHi():
-        print("hi")
 
-    scheduler.addScheduleEveryday("03:00", printHi)
+def howl():
+    howler_msg = "<@{}> 너 오늘 코테 안했다잉: \n*<https://github.com/Giggle-projects/our-howler|Github - our howler>*"
+    slackSender.send(url, howler_msg.format(jhSlackId))
+    print("hi")
+
+
+if __name__ == "__main__":
+    scheduler.addScheduleEveryday("00:00", howl)
     scheduler.runScheduler(1)
     uvicorn.run(app, port=7777)
-

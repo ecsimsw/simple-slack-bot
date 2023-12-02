@@ -4,8 +4,7 @@ import time
 import threading
 
 def addScheduleEveryday(time, action):
-    # return schedule.every().day.at(time).do(action)
-    return schedule.every(1).seconds.do(action)
+    return schedule.every().day.at(time).do(action)
 
 
 def runScheduler(interval):
