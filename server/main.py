@@ -18,12 +18,13 @@ def health():
 
 
 def howl():
-    howler_msg = "<@{}> 너 오늘 코테 안했다잉: \n*<https://github.com/Giggle-projects/our-howler|Github - our howler>*"
+    howler_msg = "<@{}> HOW DARE YOU STEAL THAT CAR! I AM ABSOLUTELY DISGUSTED! YOUR FATHER'S IS NOW FACING AN INQUIRY AT WORK, AND IT'S ENTIRELY YOUR FAULT! IF YOU PUT ANOTHER TOE OUT OF LINE, WE'LL BRING YOU STRAIGHT HOME!: \n" \
+                 "*<https://github.com/Giggle-projects/our-howler|Github - our howler>*"
     slackSender.send(url, howler_msg.format(jhSlackId))
     print("hi")
 
 
 if __name__ == "__main__":
-    scheduler.addScheduleEveryday("00:00", howl)
+    scheduler.addScheduleEveryday("23:59", howl)
     scheduler.runScheduler(1)
-    uvicorn.run(app, port=7777)
+    uvicorn.run(app, host="0.0.0.0", port=7777)

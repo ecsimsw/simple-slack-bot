@@ -9,7 +9,7 @@ def addScheduleEveryday(time, action):
 
 def runScheduler(interval):
     def startSchedule():
-        print("schedule을 시작합니다.")
+        print("Start your scheduling, press CTR+C to quit")
         while True:
             schedule.run_pending()
             time.sleep(interval)

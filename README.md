@@ -4,15 +4,11 @@
 ![howler_1_1800x1248](https://github.com/Giggle-projects/cote-howler/assets/46060746/4a2c7c97-4621-4e74-aa12-fb558334a6bd)
 
 
-## Dev env
+## How to run
 
 ```
-brew install python
+docker build . -t howler
 
-pip3 install fastapi 
-pip3 install uvicorn 
-pip3 install slack_sdk
-pip3 install schedule
+docker run -d -p 7777:7777 howler
 
-python3 server/main.py
 ```
