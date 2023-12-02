@@ -1,7 +1,7 @@
 # our-howler
-누가 오늘 코테를 안했는가
 
-![howler_1_1800x1248](https://github.com/Giggle-projects/cote-howler/assets/46060746/4a2c7c97-4621-4e74-aa12-fb558334a6bd)
+![287287281-4a2c7c97-4621-4e74-aa12-fb558334a6bd (1)](https://github.com/Giggle-projects/our-howler/assets/46060746/2e23cde1-294c-4159-bd1f-c3299b3b53e3)
+
 
 
 ## How to run
