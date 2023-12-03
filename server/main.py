@@ -21,10 +21,7 @@ async def say_anything(
 ):
     form = await request.form()
     print(form)
-    print(form[0])
-    print(form[0].user_id)
-    print(form.user_id)
-    return "hi"
+    return form["user_id"]
     # query_word = request.form['text']
     # user = request.form['user_id']
     # return "<@{}>".format(user_name) + signiture
