@@ -1,7 +1,7 @@
 import uvicorn
 from fastapi import FastAPI, Form
 
-
+from starlette.requests import Request
 import slackSender
 import scheduler
 
@@ -17,22 +17,14 @@ app = FastAPI()
 
 @app.post("/")
 def say_anything(
-    token: str = Form(),
-    team_id: str = Form(),
-    team_domain: str = Form(),
-    enterprise_id: str = Form(),
-    enterprise_name: str = Form(),
-    channel_id: str = Form(),
-    channel_name: str = Form(),
-    user_id: str = Form(),
-    user_name: str = Form(),
-    command: str = Form(),
-    text: str = Form(),
-    response_url: str = Form(),
-    trigger_id: str = Form(),
-    api_app_id: str = Form()
+    request: Request
 ):
-    return "<@{}>".format(user_name) + signiture
+    form = request.form()
+    print(form)
+    return "hi"
+    # query_word = request.form['text']
+    # user = request.form['user_id']
+    # return "<@{}>".format(user_name) + signiture
 
 
 @app.post("/hey")
@@ -41,7 +33,7 @@ def health():
 
 
 def howl():
-    slackSender.send(signiture)
+    slackSender.send("howler-alert", signiture)
 
 
 if __name__ == "__main__":
