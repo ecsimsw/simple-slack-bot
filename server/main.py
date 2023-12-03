@@ -1,9 +1,5 @@
 import uvicorn
 from fastapi import FastAPI
-from fastapi.responses import ORJSONResponse
-
-from starlette.middleware.cors import CORSMiddleware
-
 
 import slackSender
 import scheduler
@@ -14,20 +10,11 @@ jhSlackId = "U02DWRS37FY"
 
 app = FastAPI()
 
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=['*'],
-    allow_credentials=True,
-    allow_methods=['*'],
-    allow_headers=['*'],
-)
 
-
-@app.post("/", response_class=ORJSONResponse)
+@app.post("/")
 def health():
     howl()
-    data = {"msg" : "howl"}
-    return ORJSONResponse([data])
+    return "howl"
 
 
 def howl():
