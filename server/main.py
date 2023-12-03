@@ -9,9 +9,6 @@ signiture = "HOW DARE YOU STEAL THAT CAR! I AM ABSOLUTELY DISGUSTED! YOUR FATHER
              "*<https://github.com/Giggle-projects/our-howler|Github - our howler>*"
 
 
-ygSlackId = "U067TDGK3PZ"
-jhSlackId = "U02DWRS37FY"
-
 app = FastAPI()
 
 
