@@ -2,6 +2,9 @@ import uvicorn
 from fastapi import FastAPI
 from fastapi.responses import ORJSONResponse
 
+from starlette.middleware.cors import CORSMiddleware
+
+
 import slackSender
 import scheduler
 
@@ -10,6 +13,14 @@ ygSlackId = "U067TDGK3PZ"
 jhSlackId = "U02DWRS37FY"
 
 app = FastAPI()
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=['*'],
+    allow_credentials=True,
+    allow_methods=['*'],
+    allow_headers=['*'],
+)
 
 
 @app.get("/", response_class=ORJSONResponse)
