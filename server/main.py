@@ -16,11 +16,12 @@ app = FastAPI()
 
 
 @app.post("/")
-def say_anything(
+async def say_anything(
     request: Request
 ):
-    form = request.form()
+    form = await request.form()
     print(form)
+    print(form.user_id)
     return "hi"
     # query_word = request.form['text']
     # user = request.form['user_id']
