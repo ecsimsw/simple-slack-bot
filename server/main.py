@@ -20,11 +20,25 @@ async def say_anything(
     request: Request
 ):
     form = await request.form()
-    print(form)
-    return form["user_id"]
-    # query_word = request.form['text']
-    # user = request.form['user_id']
-    # return "<@{}>".format(user_name) + signiture
+
+    # These are from slack slash command request
+    # This request contains a data payload describing the source command and who invoked it.
+
+    token = form["token"]
+    team_id = form["team_id"]
+    team_domain = form["team_domain"]
+    enterprise_id = form["enterprise_id"]
+    enterprise_name = form["enterprise_name"]
+    channel_id = form["channel_id"]
+    channel_name = form["channel_name"]
+    user_id = form["user_id"]
+    user_name = form["user_name"]
+    command = form["command"]
+    text = form["text"]
+    response_url = form["response_url"]
+    trigger_id = form["trigger_id"]
+    api_app_id = form["api_app_id"]
+    return "<@{}>".format(user_id) + signiture
 
 
 @app.post("/hey")
