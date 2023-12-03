@@ -23,7 +23,7 @@ app.add_middleware(
 )
 
 
-@app.get("/", response_class=ORJSONResponse)
+@app.post("/", response_class=ORJSONResponse)
 def health():
     howl()
     data = {"msg" : "howl"}
