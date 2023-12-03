@@ -27,8 +27,6 @@ async def say_anything(
     token = form["token"]
     team_id = form["team_id"]
     team_domain = form["team_domain"]
-    enterprise_id = form["enterprise_id"]
-    enterprise_name = form["enterprise_name"]
     channel_id = form["channel_id"]
     channel_name = form["channel_name"]
     user_id = form["user_id"]
